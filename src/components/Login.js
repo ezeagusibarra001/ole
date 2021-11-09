@@ -1,27 +1,53 @@
-import React from "react";
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-
+import React, { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { useHistory } from "react-router-dom";
+import { useHome } from "../context/home-context";
 function Login() {
+  let history = useHistory();
+  const { login, logueado, setLogueado } = useHome();
+  const [currentUser, setCurrentUser] = useState({
+    user: "",
+    pass: "",
+  });
+  const handleChange = (e) => {
+    setCurrentUser({ ...currentUser, [e.target.name]: e.target.value });
+  };
+  const submit = () => {
+    console.log(currentUser);
+    console.log(login);
+    console.log(logueado);
+    if (currentUser.user === login.user && currentUser.pass === login.pass) {
+      setLogueado(true);
+      history.push("/");
+    } else {
+      alert("Contraseña o Usuario incorrecto");
+    }
+  };
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
+        <Form.Label>USUARIO</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Usuario"
+          name="user"
+          onChange={handleChange}
+        />
+        <Form.Text className="text-muted">VAMO QUILMES B</Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Label>CONTRASEÑA</Form.Label>
+        <Form.Control
+          type="password"
+          placeholder="Contraseña"
+          name="pass"
+          onChange={handleChange}
+        />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
+      <Button variant="primary" onClick={submit}>
+        INGRESAR
       </Button>
     </Form>
   );
