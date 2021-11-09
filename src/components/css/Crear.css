@@ -1,0 +1,38 @@
+@import url(//db.onlinewebfonts.com/c/f59f945c803a46fe017610dbd1914db7?family=Aachen);
+@font-face {
+  font-family: "Aachen";
+  src: url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.eot");
+  src: url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/f59f945c803a46fe017610dbd1914db7.svg#Aachen")
+      format("svg");
+}
+.headerCrear {
+  background: rgba(144, 185, 2, 0.85) !important;
+}
+.p {
+  font-size: 15px;
+  cursor: pointer;
+  color: #fff;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.navbarTogle {
+  background-color: #fff !important;
+}
+.titleCard {
+  font-family: "Aachen";
+  font-weight: bold;
+  font-size: 190%;
+}
+.description {
+  font: 16px / 18px "Roboto";
+  color: #333;
+}

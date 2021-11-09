@@ -8,16 +8,21 @@ function Menu() {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand>Ecomerce</Navbar.Brand>
+        <Navbar.Brand>
+          <Link className="optionMenu" to="/">
+            QUILMES B
+          </Link>
+        </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link>
-            <Link to="/">Home</Link>
+            <Link className="optionMenu" to="/Crear">
+              CREAR
+            </Link>
           </Nav.Link>
           <Nav.Link>
-            <Link to="/Registro">Registro</Link>
-          </Nav.Link>
-          <Nav.Link>
-            <Link to="/Login">Login</Link>
+            <Link className="optionMenu" to="/Login">
+              INICIAR SESION
+            </Link>
           </Nav.Link>
         </Nav>
       </Container>
